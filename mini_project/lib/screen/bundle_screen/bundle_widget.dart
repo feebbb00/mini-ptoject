@@ -15,17 +15,13 @@ class BundleWidgetPage extends StatelessWidget {
         if (bundleViewModel.isloadingBundle) {
           return const Center(child: CircularProgressIndicator());
         } else {
-          var dataBundle = bundleViewModel.listBundel[17];
+          var dataBundle = bundleViewModel.listBundel[7];
           return ListView(
             padding: const EdgeInsets.symmetric(
               horizontal: 18,
               vertical: 100,
             ),
             children: [
-              // Text(
-              //   'NEW BUNDLE REALEASE',
-              //   style: TypographyStyle.valoMRL,
-              // ),
               Card(
                 color: const Color(0xFFfd4556),
                 child: Padding(
@@ -35,8 +31,8 @@ class BundleWidgetPage extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'NEW BUNDLE REALEASE',
-                        style: TypographyStyle.antonM,
+                        'NEW BUNDLE RELEASE',
+                        style: TypographyStyle.antonL,
                       ),
                       const SizedBox(height: 6),
                       ClipRRect(
@@ -49,22 +45,35 @@ class BundleWidgetPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Text(
-                        dataBundle.description ?? '-',
-                        style: TypographyStyle.antonM,
-                      ),
-                      Text(
-                        dataBundle.extraDescription ?? '-',
-                        style: TypographyStyle.robotoS,
-                      ),
-                      const SizedBox(height: 20),
-                      Text(
-                        'LIMITED BUNDLE !!!',
-                        style: TypographyStyle.antonM,
-                      ),
-                      Text(
-                        dataBundle.promoDescription ?? '-',
-                        style: TypographyStyle.robotoS,
+                      Container(
+                        padding: const EdgeInsets.all(6),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                            10,
+                          ),
+                          color: const Color(0xFF53212b),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Center(
+                              child: Text(
+                                dataBundle.description ?? '-',
+                                style: TypographyStyle.antonL,
+                              ),
+                            ),
+                            Text(
+                              dataBundle.extraDescription ?? '-',
+                              style: TypographyStyle.robotoS,
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              dataBundle.promoDescription ?? '-',
+                              style: TypographyStyle.robotoS,
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),

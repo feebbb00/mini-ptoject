@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project/screen/bundle_screen/bundle_screen.dart';
 import 'package:mini_project/screen/bundle_screen/bundle_view_model.dart';
+import 'package:mini_project/screen/coba_tabBar/coba_tab_bar.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -24,10 +25,9 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const BundleScreen(),
+        home: const CobaTabBar(),
       ),
     );
   }
 }
 
-///testestetsss
