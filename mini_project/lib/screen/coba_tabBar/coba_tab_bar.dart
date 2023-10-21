@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project/screen/bundle_screen/bundle_widget.dart';
+import 'package:mini_project/screen/version_screen/version_screen.dart';
 import 'package:mini_project/theme/typography_style.dart';
 
 class CobaTabBar extends StatelessWidget {
@@ -10,9 +11,9 @@ class CobaTabBar extends StatelessWidget {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: const Color(0XFF182545),
+        backgroundColor: const Color(0XFF141c24),
         appBar: AppBar(
-          backgroundColor: const Color(0XFF182545),
+          backgroundColor: const Color(0XFF141c24),
           centerTitle: true,
           title: Text(
             'Valorant News Hub',
@@ -29,7 +30,7 @@ class CobaTabBar extends StatelessWidget {
               ),
               Tab(
                 child: Text(
-                  'UPDATE PATCH REALESE',
+                  'VALORANT VERSION',
                   style: TypographyStyle.antonM,
                 ),
               ),
@@ -41,19 +42,21 @@ class CobaTabBar extends StatelessWidget {
               ),
               Tab(
                 child: Text(
-                  'XXX',
+                  'VALORANT VERSION',
                   style: TypographyStyle.antonM,
                 ),
               ),
             ],
           ),
         ),
-        body: TabBarView(children: [
-          BundleWidgetPage(),
-          Icon(Icons.access_alarm),
-          Icon(Icons.earbuds_battery_outlined),
-          Icon(Icons.wallet_giftcard),
-        ]),
+        body: const TabBarView(
+          children: [
+            BundleWidgetPage(),
+            UpdateInfoScreen(),
+            Icon(Icons.access_alarm),
+            Icon(Icons.earbuds_battery_outlined),
+          ],
+        ),
       ),
     );
   }

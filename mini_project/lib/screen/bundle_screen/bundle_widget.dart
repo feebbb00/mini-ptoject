@@ -10,15 +10,16 @@ class BundleWidgetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final bundelViewModel = context.read<BundleViewModel>();
     bundelViewModel.getBundle();
+
     return Consumer<BundleViewModel>(
       builder: (context, bundleViewModel, child) {
         if (bundleViewModel.isloadingBundle) {
           return const Center(child: CircularProgressIndicator());
         } else {
-          var dataBundle = bundleViewModel.listBundel[7];
+          var dataBundle = bundleViewModel.listBundel[17];
           return ListView(
             padding: const EdgeInsets.symmetric(
-              horizontal: 18,
+              horizontal: 16,
               vertical: 100,
             ),
             children: [
@@ -52,7 +53,7 @@ class BundleWidgetPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                             10,
                           ),
-                          color: const Color(0xFF53212b),
+                          color: const Color(0xFF672e37),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

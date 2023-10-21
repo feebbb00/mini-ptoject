@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project/screen/bundle_screen/bundle_screen.dart';
 import 'package:mini_project/screen/bundle_screen/bundle_view_model.dart';
 import 'package:mini_project/screen/coba_tabBar/coba_tab_bar.dart';
+import 'package:mini_project/screen/version_screen/version_view_model.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,11 +18,14 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<BundleViewModel>(
           create: (context) => BundleViewModel(),
         ),
+        ChangeNotifierProvider<VersionViewModel>(
+          create: (context) => VersionViewModel(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFfd4556)),
           useMaterial3: true,
         ),
         home: const CobaTabBar(),
@@ -30,4 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
