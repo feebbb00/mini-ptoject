@@ -21,6 +21,21 @@ class TypographyStyle {
     fontFamily: 'anton',
     fontSize: 22,
   );
+  static TextStyle antonLMR = const TextStyle(
+    color: Color(0xFFbd3944),
+    fontFamily: 'anton',
+    fontSize: 22,
+  );
+  static TextStyle antonXL = const TextStyle(
+    color: Color(0xFFfffbf5),
+    fontFamily: 'anton',
+    fontSize: 42,
+  );
+  static TextStyle antonXLBL = const TextStyle(
+    color: Color(0xFFbd3944),
+    fontFamily: 'anton',
+    fontSize: 42,
+  );
   static TextStyle robotoS = const TextStyle(
     color: Color(0xFFfffbf5),
     fontFamily: 'roboto',

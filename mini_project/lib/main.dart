@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mini_project/screen/agent_screen/agent_view_model.dart';
 import 'package:mini_project/screen/bundle_screen/bundle_view_model.dart';
 import 'package:mini_project/screen/coba_tabBar/coba_tab_bar.dart';
+import 'package:mini_project/screen/detail_screen/detail_agent_view_model.dart';
 import 'package:mini_project/screen/version_screen/version_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +22,12 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<VersionViewModel>(
           create: (context) => VersionViewModel(),
+        ),
+        ChangeNotifierProvider<AgentViewModel>(
+          create: (context) => AgentViewModel(),
+        ),
+        ChangeNotifierProvider<DetailAgentViewModel>(
+          create: (context) => DetailAgentViewModel(),
         ),
       ],
       child: MaterialApp(

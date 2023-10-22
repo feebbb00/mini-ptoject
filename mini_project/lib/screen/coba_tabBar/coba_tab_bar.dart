@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_project/screen/agent_screen/agent_widget.dart';
 import 'package:mini_project/screen/bundle_screen/bundle_widget.dart';
 import 'package:mini_project/screen/version_screen/version_screen.dart';
 import 'package:mini_project/theme/typography_style.dart';
@@ -36,7 +37,7 @@ class CobaTabBar extends StatelessWidget {
               ),
               Tab(
                 child: Text(
-                  'XXXasdasdasd',
+                  'AGENT',
                   style: TypographyStyle.antonM,
                 ),
               ),
@@ -51,9 +52,9 @@ class CobaTabBar extends StatelessWidget {
         ),
         body: const TabBarView(
           children: [
+            AgentWidget(),
             BundleWidgetPage(),
             UpdateInfoScreen(),
-            Icon(Icons.access_alarm),
             Icon(Icons.earbuds_battery_outlined),
           ],
         ),
