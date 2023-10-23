@@ -102,7 +102,7 @@ class AgentModel {
 }
 
 class Ability {
-  Slot? slot;
+  String? slot;
   String? displayName;
   String? description;
   String? displayIcon;
@@ -115,29 +115,19 @@ class Ability {
   });
 
   factory Ability.fromJson(Map<String, dynamic> json) => Ability(
-        slot: slotValues.map[json["slot"]]!,
+        slot: json["slot"],
         displayName: json["displayName"],
         description: json["description"],
         displayIcon: json["displayIcon"],
       );
 
   Map<String, dynamic> toJson() => {
-        "slot": slotValues.reverse[slot],
+        "slot": slot,
         "displayName": displayName,
         "description": description,
         "displayIcon": displayIcon,
       };
 }
-
-enum Slot { ABILITY1, ABILITY2, GRENADE, PASSIVE, ULTIMATE }
-
-final slotValues = EnumValues({
-  "Ability1": Slot.ABILITY1,
-  "Ability2": Slot.ABILITY2,
-  "Grenade": Slot.GRENADE,
-  "Passive": Slot.PASSIVE,
-  "Ultimate": Slot.ULTIMATE
-});
 
 class RecruitmentData {
   String? counterId;
@@ -175,7 +165,7 @@ class RecruitmentData {
 
 class Role {
   String? uuid;
-  DisplayName? displayName;
+  String? displayName;
   String? description;
   String? displayIcon;
   String? assetPath;
@@ -190,30 +180,9 @@ class Role {
 
   factory Role.fromJson(Map<String, dynamic> json) => Role(
         uuid: json["uuid"],
-        displayName: displayNameValues.map[json["displayName"]]!,
+        displayName: json["displayName"],
         description: json["description"],
         displayIcon: json["displayIcon"],
         assetPath: json["assetPath"],
       );
-}
-
-enum DisplayName { CONTROLLER, DUELIST, INITIATOR, SENTINEL }
-
-final displayNameValues = EnumValues({
-  "Controller": DisplayName.CONTROLLER,
-  "Duelist": DisplayName.DUELIST,
-  "Initiator": DisplayName.INITIATOR,
-  "Sentinel": DisplayName.SENTINEL
-});
-
-class EnumValues<T> {
-  Map<String, T> map;
-  late Map<T, String> reverseMap;
-
-  EnumValues(this.map);
-
-  Map<T, String> get reverse {
-    reverseMap = map.map((k, v) => MapEntry(v, k));
-    return reverseMap;
-  }
 }

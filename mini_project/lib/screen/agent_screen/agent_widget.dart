@@ -61,9 +61,17 @@ class AgentWidget extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Text(
-                            dataAgent.displayName ?? '-',
-                            style: TypographyStyle.antonXL,
+                          Column(
+                            children: [
+                              Text(
+                                dataAgent.displayName ?? '-',
+                                style: TypographyStyle.antonXL,
+                              ),
+                              Text(
+                                dataAgent.role?.displayName ?? '-',
+                                style: TypographyStyle.antonXL,
+                              ),
+                            ],
                           ),
                         ],
                       ),

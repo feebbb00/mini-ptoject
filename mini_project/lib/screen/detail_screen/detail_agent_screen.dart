@@ -97,7 +97,7 @@ class DetailAgentScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'febi ${ability?.slot}',
+                                  '${ability?.slot}',
                                   style: TypographyStyle.robotoS,
                                 ),
                                 Text(
