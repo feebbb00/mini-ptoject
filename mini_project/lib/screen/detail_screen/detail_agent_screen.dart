@@ -66,26 +66,65 @@ class DetailAgentScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Card(
-                          color: const Color(0xFF53212b),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'BIOGRAPHY',
-                                  style: TypographyStyle.antonM,
-                                ),
-                                Text(
-                                  detailAgentData.description ?? '-',
-                                  style: TypographyStyle.robotoS,
-                                ),
-                              ],
+                        Padding(
+                          padding: const EdgeInsets.all(12),
+                          child: Card(
+                            color: const Color(0xFF53212b),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '//BIOGRAPHY',
+                                    style: TypographyStyle.antonM,
+                                  ),
+                                  Text(
+                                    detailAgentData.description ?? '-',
+                                    style: TypographyStyle.robotoS,
+                                  ),
+                                  const SizedBox(height: 12),
+                                  Text(
+                                    '//ROLE',
+                                    style: TypographyStyle.antonM,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        detailAgentData.role?.displayName ??
+                                            '-',
+                                        style: TypographyStyle.antonL,
+                                      ),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Image.network(
+                                          detailAgentData.role?.displayIcon ??
+                                              '-',
+                                          fit: BoxFit.cover,
+                                          width: 20,
+                                          height: 20,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 20),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    detailAgentData.role?.description ?? '-',
+                                    style: TypographyStyle.robotoS,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
                         const SizedBox(height: 16),
+                        Center(
+                          child: Text(
+                            'ABILITY',
+                            style: TypographyStyle.antonXL,
+                          ),
+                        ),
                         ListView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
@@ -93,34 +132,44 @@ class DetailAgentScreen extends StatelessWidget {
                           itemBuilder: (context, abilityIndex) {
                             var ability =
                                 detailAgentData.abilities?[abilityIndex];
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  '${ability?.slot}',
-                                  style: TypographyStyle.robotoS,
-                                ),
-                                Text(
-                                  ability?.displayName ?? '-',
-                                  style: TypographyStyle.robotoS,
-                                ),
-                                Center(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.network(
-                                      ability?.displayIcon ?? '-',
-                                      fit: BoxFit.cover,
-                                      width: 50,
-                                      height: 50,
-                                    ),
+                            return Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: Card(
+                                color: const Color(0xFFfd4556),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        '${ability?.slot}',
+                                        style: TypographyStyle.antonM,
+                                      ),
+                                      Text(
+                                        ability?.displayName ?? '-',
+                                        style: TypographyStyle.antonL,
+                                      ),
+                                      Center(
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          child: Image.network(
+                                            ability?.displayIcon ?? '-',
+                                            fit: BoxFit.cover,
+                                            width: 65,
+                                            height: 65,
+                                          ),
+                                        ),
+                                      ),
+                                      Text(
+                                        ability?.description ?? '-',
+                                        style: TypographyStyle.robotoS,
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                Text(
-                                  ability?.description ?? '-',
-                                  style: TypographyStyle.robotoS,
-                                ),
-                                const SizedBox(height: 50),
-                              ],
+                              ),
                             );
                           },
                         ),

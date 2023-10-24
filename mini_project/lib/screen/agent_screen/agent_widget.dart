@@ -62,15 +62,21 @@ class AgentWidget extends StatelessWidget {
                             ],
                           ),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
                                 dataAgent.displayName ?? '-',
                                 style: TypographyStyle.antonXL,
                               ),
-                              Text(
-                                dataAgent.role?.displayName ?? '-',
-                                style: TypographyStyle.antonXL,
-                              ),
+                              // const SizedBox(height: 20),
+                              // Text(
+                              //   'Role :',
+                              //   style: TypographyStyle.antonM,
+                              // ),
+                              // Text(
+                              //   dataAgent.role?.displayName ?? '-',
+                              //   style: TypographyStyle.antonL,
+                              // ),
                             ],
                           ),
                         ],
