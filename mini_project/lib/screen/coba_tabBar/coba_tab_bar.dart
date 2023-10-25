@@ -20,18 +20,21 @@ class CobaTabBar extends StatelessWidget {
             'Valorant News Hub',
             style: TypographyStyle.valoMRL,
           ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
+            ),
+          ],
           bottom: TabBar(
             isScrollable: true,
             tabs: [
               Tab(
                 child: Text(
-                  'NEW BUNDLE INFO',
-                  style: TypographyStyle.antonM,
-                ),
-              ),
-              Tab(
-                child: Text(
-                  'VALORANT VERSION',
+                  'NEW BUNDLE',
                   style: TypographyStyle.antonM,
                 ),
               ),
@@ -47,13 +50,19 @@ class CobaTabBar extends StatelessWidget {
                   style: TypographyStyle.antonM,
                 ),
               ),
+              Tab(
+                child: Text(
+                  'VALORANT VERSION',
+                  style: TypographyStyle.antonM,
+                ),
+              ),
             ],
           ),
         ),
         body: const TabBarView(
           children: [
-            AgentWidget(),
             BundleWidgetPage(),
+            AgentWidget(),
             UpdateInfoScreen(),
             Icon(Icons.earbuds_battery_outlined),
           ],
