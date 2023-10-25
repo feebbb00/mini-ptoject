@@ -1,4 +1,3 @@
-//Agar nilai menjadi list maka futurenya berbentuk
 import 'package:dio/dio.dart';
 import 'package:mini_project/model/list_agent_model.dart';
 

@@ -19,7 +19,7 @@ class AgentWidget extends StatelessWidget {
                 child: CircularProgressIndicator(),
               )
             : ListView.builder(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(20),
                 itemCount: agentViewModel.listAgent.length,
                 itemBuilder: (context, index) {
                   var dataAgent = agentViewModel.listAgent[index];
