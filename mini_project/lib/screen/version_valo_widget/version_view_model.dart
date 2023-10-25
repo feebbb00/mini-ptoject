@@ -6,16 +6,14 @@ class VersionViewModel extends ChangeNotifier {
   bool _isLoadingVersion = false;
   bool get isLoadingVersion => _isLoadingVersion;
 
-  VersionModel? _versionData; // Menambahkan properti untuk data versi
+  VersionModel? _versionData;
   VersionModel? get versionData => _versionData;
 
   void getVersion() async {
     _isLoadingVersion = true;
     notifyListeners();
 
-    _versionData =
-        await VersionAPI().getVersionFromAPI(); // Memperbarui _versionData
-
+    _versionData = await VersionAPI().getVersionFromAPI();
     _isLoadingVersion = false;
     notifyListeners();
   }

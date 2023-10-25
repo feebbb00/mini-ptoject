@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project/screen/map_screen/map_view_model.dart';
+import 'package:mini_project/screen/map_avail_widget/map_view_model.dart';
 import 'package:mini_project/theme/typography_style.dart';
 import 'package:provider/provider.dart';
 
@@ -29,27 +29,14 @@ class MapWidget extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(5),
-                                child: Image.network(
-                                  dataMap.listViewIcon ?? '-',
-                                  fit: BoxFit.cover,
-                                  width: 350,
-                                  height: 120,
-                                ),
-                              ),
-                              // ClipRRect(
-                              //   borderRadius: BorderRadius.circular(10),
-                              //   child: Image.network(
-                              //     dataMap.displayIcon ?? '-',
-                              //     fit: BoxFit.cover,
-                              //     width: 160,
-                              //     height: 220,
-                              //   ),
-                              // ),
-                            ],
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(5),
+                            child: Image.network(
+                              dataMap.listViewIcon ?? '-',
+                              fit: BoxFit.cover,
+                              width: 350,
+                              height: 120,
+                            ),
                           ),
                           const SizedBox(height: 10),
                           Text(

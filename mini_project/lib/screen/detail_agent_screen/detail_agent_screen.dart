@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project/screen/detail_screen/detail_agent_view_model.dart';
+import 'package:mini_project/screen/detail_agent_screen/detail_agent_view_model.dart';
 import 'package:mini_project/theme/typography_style.dart';
 import 'package:provider/provider.dart';
 

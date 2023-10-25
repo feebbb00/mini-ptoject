@@ -1,14 +1,3 @@
-// To parse this JSON data, do
-//
-//     final versionModel = versionModelFromJson(jsonString);
-
-import 'dart:convert';
-
-VersionModel versionModelFromJson(String str) =>
-    VersionModel.fromJson(json.decode(str));
-
-String versionModelToJson(VersionModel data) => json.encode(data.toJson());
-
 class VersionModel {
   int? status;
   Data? data;
@@ -22,11 +11,6 @@ class VersionModel {
         status: json["status"],
         data: json["data"] == null ? null : Data.fromJson(json["data"]),
       );
-
-  Map<String, dynamic> toJson() => {
-        "status": status,
-        "data": data?.toJson(),
-      };
 }
 
 class Data {
@@ -60,15 +44,4 @@ class Data {
         riotClientBuild: json["riotClientBuild"],
         buildDate: json["buildDate"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "manifestId": manifestId,
-        "branch": branch,
-        "version": version,
-        "buildVersion": buildVersion,
-        "engineVersion": engineVersion,
-        "riotClientVersion": riotClientVersion,
-        "riotClientBuild": riotClientBuild,
-        "buildDate": buildDate,
-      };
 }

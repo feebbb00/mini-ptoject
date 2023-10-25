@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project/screen/agent_screen/agent_widget.dart';
-import 'package:mini_project/screen/bundle_screen/bundle_widget.dart';
-import 'package:mini_project/screen/map_screen/map_widget.dart';
-import 'package:mini_project/screen/version_screen/version_screen.dart';
+import 'package:mini_project/screen/agent_widget/agent_widget.dart';
+import 'package:mini_project/screen/bundle_widget/bundle_widget.dart';
+import 'package:mini_project/screen/map_avail_widget/map_widget.dart';
+import 'package:mini_project/screen/version_valo_widget/version_widget.dart';
 import 'package:mini_project/theme/typography_style.dart';
 
 class CobaTabBar extends StatelessWidget {

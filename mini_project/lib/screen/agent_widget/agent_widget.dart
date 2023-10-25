@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project/screen/agent_screen/agent_view_model.dart';
-import 'package:mini_project/screen/detail_screen/detail_agent_screen.dart';
+import 'package:mini_project/screen/agent_widget/agent_view_model.dart';
+import 'package:mini_project/screen/detail_agent_screen/detail_agent_screen.dart';
 import 'package:mini_project/theme/typography_style.dart';
 import 'package:provider/provider.dart';
 
@@ -24,9 +24,7 @@ class AgentWidget extends StatelessWidget {
                 itemBuilder: (context, index) {
                   var dataAgent = agentViewModel.listAgent[index];
                   return GestureDetector(
-                    // Tambahkan GestureDetector untuk menangani ketika card ditekan
                     onTap: () {
-                      // Navigasi ke halaman DetailAgentScreen dengan membawa UUID agen
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => DetailAgentScreen(
@@ -61,23 +59,9 @@ class AgentWidget extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                dataAgent.displayName ?? '-',
-                                style: TypographyStyle.antonXL,
-                              ),
-                              // const SizedBox(height: 20),
-                              // Text(
-                              //   'Role :',
-                              //   style: TypographyStyle.antonM,
-                              // ),
-                              // Text(
-                              //   dataAgent.role?.displayName ?? '-',
-                              //   style: TypographyStyle.antonL,
-                              // ),
-                            ],
+                          Text(
+                            dataAgent.displayName ?? '-',
+                            style: TypographyStyle.antonXL,
                           ),
                         ],
                       ),

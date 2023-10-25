@@ -6,16 +6,14 @@ class DetailAgentViewModel extends ChangeNotifier {
   bool _isLoadingDetailAgent = false;
   bool get isLoadingDetailAgent => _isLoadingDetailAgent;
 
-  DetailAgentModel? _detailAgentData; // Menambahkan properti untuk data versi
+  DetailAgentModel? _detailAgentData;
   DetailAgentModel? get detailAgentData => _detailAgentData;
 
   void getDetailAgent(String uuid) async {
     _isLoadingDetailAgent = true;
     notifyListeners();
 
-    _detailAgentData = await DetailAgentAPI()
-        .getDetailAgentFromAPI(uuid: uuid); // Memperbarui _detailAgentData
-
+    _detailAgentData = await DetailAgentAPI().getDetailAgentFromAPI(uuid: uuid);
     _isLoadingDetailAgent = false;
     notifyListeners();
   }

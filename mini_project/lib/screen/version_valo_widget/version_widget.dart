@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project/screen/version_screen/version_view_model.dart';
+import 'package:mini_project/screen/version_valo_widget/version_view_model.dart';
 import 'package:mini_project/theme/typography_style.dart';
 import 'package:provider/provider.dart';
 
