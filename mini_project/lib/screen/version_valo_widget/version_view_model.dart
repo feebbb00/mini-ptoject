@@ -14,6 +14,7 @@ class VersionViewModel extends ChangeNotifier {
     notifyListeners();
 
     _versionData = await VersionAPI().getVersionFromAPI();
+
     _isLoadingVersion = false;
     notifyListeners();
   }

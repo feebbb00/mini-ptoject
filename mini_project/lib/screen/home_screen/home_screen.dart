@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mini_project/screen/agent_widget/agent_widget.dart';
 import 'package:mini_project/screen/bundle_widget/bundle_widget.dart';
 import 'package:mini_project/screen/map_avail_widget/map_widget.dart';
+import 'package:mini_project/screen/open_ai_screen/open_ai_screen.dart';
+import 'package:mini_project/screen/open_ai_screen/stl_ai.dart';
 import 'package:mini_project/screen/version_valo_widget/version_widget.dart';
 import 'package:mini_project/theme/typography_style.dart';
 
@@ -22,13 +24,34 @@ class CobaTabBar extends StatelessWidget {
             style: TypographyStyle.valoMRL,
           ),
           actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.search,
-                color: Colors.white,
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => AiScreen(),
+                  ),
+                );
+              },
+              child: Text(
+                'AC',
+                style: TypographyStyle.antonS,
               ),
             ),
+            // IconButton(
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (_) => const OpenAiScreen(),
+            //       ),
+            //     );
+            //   },
+            //   icon: const Icon(
+            //     Icons.search,
+            //     color: Colors.white,
+            //   ),
+            // ),
           ],
           bottom: TabBar(
             isScrollable: true,

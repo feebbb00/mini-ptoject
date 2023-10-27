@@ -4,6 +4,7 @@ import 'package:mini_project/screen/bundle_widget/bundle_view_model.dart';
 import 'package:mini_project/screen/home_screen/home_screen.dart';
 import 'package:mini_project/screen/detail_agent_screen/detail_agent_view_model.dart';
 import 'package:mini_project/screen/map_avail_widget/map_view_model.dart';
+import 'package:mini_project/screen/open_ai_screen/open_ai_view_model.dart';
 import 'package:mini_project/screen/version_valo_widget/version_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -32,6 +33,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<MapViewModel>(
           create: (context) => MapViewModel(),
+        ),
+        ChangeNotifierProvider<OpenAiViewModel>(
+          create: (context) => OpenAiViewModel(),
         ),
       ],
       child: MaterialApp(

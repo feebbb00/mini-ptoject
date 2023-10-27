@@ -10,8 +10,8 @@ class DetailAgentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final detailAgentViewModel = context.read<DetailAgentViewModel>();
-    detailAgentViewModel.getDetailAgent(agentUUID);
+      final detailAgentViewModel = context.read<DetailAgentViewModel>();
+      detailAgentViewModel.getDetailAgent(agentUUID);
 
     return Scaffold(
       backgroundColor: const Color(0XFF141c24),

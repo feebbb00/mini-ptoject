@@ -9,12 +9,7 @@ class VersionAPI {
       );
 
       if (response.statusCode == 200) {
-        final responseData = response.data;
-        if (responseData != null) {
-          return VersionModel.fromJson(responseData);
-        } else {
-          throw Exception("Data is null in the response");
-        }
+        return VersionModel.fromJson(response.data);
       } else {
         throw Exception(
             "Failed to fetch data. Status code: ${response.statusCode}");

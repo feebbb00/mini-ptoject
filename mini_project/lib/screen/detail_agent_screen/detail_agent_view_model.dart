@@ -14,6 +14,7 @@ class DetailAgentViewModel extends ChangeNotifier {
     notifyListeners();
 
     _detailAgentData = await DetailAgentAPI().getDetailAgentFromAPI(uuid: uuid);
+
     _isLoadingDetailAgent = false;
     notifyListeners();
   }

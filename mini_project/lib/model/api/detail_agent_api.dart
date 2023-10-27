@@ -9,15 +9,9 @@ class DetailAgentAPI {
       );
 
       if (response.statusCode == 200) {
-        final responseData = response.data;
-        if (responseData != null) {
-          return DetailAgentModel.fromJson(responseData);
-        } else {
-          throw Exception("Data is null in the response");
-        }
+        return DetailAgentModel.fromJson(response.data);
       } else {
-        throw Exception(
-            "Failed to fetch data. Status code: ${response.statusCode}");
+        throw Exception("Data is null in the response");
       }
     } catch (e) {
       throw Exception("Error fetching data: $e");
