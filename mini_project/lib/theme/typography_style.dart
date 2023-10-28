@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TypographyStyle {
-  static TextStyle valoMRL = const TextStyle(
-    color: Color(0xFFbd3944),
+  static TextStyle valoM = const TextStyle(
+    color: Color(0xFFfffbf5),
     fontFamily: 'valo',
     fontSize: 22,
   );
@@ -11,13 +11,28 @@ class TypographyStyle {
     fontFamily: 'anton',
     fontSize: 14,
   );
+  static TextStyle antonSB = const TextStyle(
+    color: Color(0XFF141c24),
+    fontFamily: 'anton',
+    fontSize: 14,
+  );
   static TextStyle antonM = const TextStyle(
     color: Color(0xFFfffbf5),
     fontFamily: 'anton',
     fontSize: 16,
   );
+  static TextStyle antonMB = const TextStyle(
+    color: Color(0XFF141c24),
+    fontFamily: 'anton',
+    fontSize: 16,
+  );
   static TextStyle antonL = const TextStyle(
     color: Color(0xFFfffbf5),
+    fontFamily: 'anton',
+    fontSize: 22,
+  );
+  static TextStyle antonLB = const TextStyle(
+    color: Color(0XFF141c24),
     fontFamily: 'anton',
     fontSize: 22,
   );
@@ -38,6 +53,12 @@ class TypographyStyle {
   );
   static TextStyle robotoS = const TextStyle(
     color: Color(0xFFfffbf5),
+    fontFamily: 'roboto',
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
+  static TextStyle robotoSB = const TextStyle(
+    color: Color(0XFF141c24),
     fontFamily: 'roboto',
     fontSize: 14,
     fontWeight: FontWeight.w500,

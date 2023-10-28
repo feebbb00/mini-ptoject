@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project/model/open_ai_model.dart';
+import 'package:mini_project/theme/typography_style.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key, required this.gptResponseData});
@@ -9,25 +10,43 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0XFF141c24),
       appBar: AppBar(
-        title: const Text('Solution'),
+        title: Text(
+          'Coach`s Answer',
+          style: TypographyStyle.antonL,
+        ),
+        backgroundColor: const Color(0xFFbd3944),
+        leading: const SizedBox(),
+        centerTitle: true,
       ),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          const Padding(
-            padding: EdgeInsets.all(16),
-            child: Text(
-              'Solution for your question',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+          Text(
+            'My Answer for your question',
+            style: TypographyStyle.antonL,
           ),
+          const SizedBox(height: 20),
           Text(
             gptResponseData.choices[0].message.content,
             textAlign: TextAlign.justify,
+            style: TypographyStyle.robotoS,
           ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  'Oke',
+                  style: TypographyStyle.antonMB,
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );

@@ -41,10 +41,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFfd4556)),
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFfffbf5)),
           useMaterial3: true,
         ),
-        home: const CobaTabBar(),
+        home: const HomeScreen(),
       ),
     );
   }

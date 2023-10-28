@@ -3,12 +3,11 @@ import 'package:mini_project/screen/agent_widget/agent_widget.dart';
 import 'package:mini_project/screen/bundle_widget/bundle_widget.dart';
 import 'package:mini_project/screen/map_avail_widget/map_widget.dart';
 import 'package:mini_project/screen/open_ai_screen/open_ai_screen.dart';
-import 'package:mini_project/screen/open_ai_screen/stl_ai.dart';
 import 'package:mini_project/screen/version_valo_widget/version_widget.dart';
 import 'package:mini_project/theme/typography_style.dart';
 
-class CobaTabBar extends StatelessWidget {
-  const CobaTabBar({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +16,11 @@ class CobaTabBar extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0XFF141c24),
         appBar: AppBar(
-          backgroundColor: const Color(0XFF141c24),
+          backgroundColor: const Color(0xFFbd3944),
           centerTitle: true,
           title: Text(
             'Valorant News Hub',
-            style: TypographyStyle.valoMRL,
+            style: TypographyStyle.valoM,
           ),
           actions: [
             TextButton(
@@ -29,12 +28,12 @@ class CobaTabBar extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => AiScreen(),
+                    builder: (_) => const OpenAiScreen(),
                   ),
                 );
               },
               child: Text(
-                'AC',
+                'AI',
                 style: TypographyStyle.antonS,
               ),
             ),

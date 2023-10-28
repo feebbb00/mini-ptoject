@@ -1,105 +1,113 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project/model/api/open_ai_api.dart';
-import 'package:mini_project/model/open_ai_model.dart';
 import 'package:mini_project/screen/open_ai_screen/answer_screen.dart';
+import 'package:mini_project/screen/open_ai_screen/open_ai_view_model.dart';
+import 'package:mini_project/theme/typography_style.dart';
+import 'package:provider/provider.dart';
 
-class HomeScreen2 extends StatefulWidget {
-  const HomeScreen2({super.key});
-
-  @override
-  State<HomeScreen2> createState() => _HomeScreen2State();
-}
-
-class _HomeScreen2State extends State<HomeScreen2> {
-  final TextEditingController _questionController = TextEditingController();
-
-  bool isLoading = false;
-  OpenAiModel? gptResponseData;
-
-  void _getRecommendation() async {
-    setState(() {
-      isLoading = true;
-    });
-
-    try {
-      final result = await OpenAiAPI().getAnswerFromOpenAI(
-        question: _questionController.text,
-      );
-
-      setState(() {
-        isLoading = false;
-        gptResponseData = result;
-      });
-
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) {
-            return ResultScreen(gptResponseData: result);
-          },
-        ),
-      );
-    } catch (e) {
-      final snackBar = SnackBar(
-        content: Text('Failed to send a request: $e'),
-      );
-
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-      setState(() {
-        isLoading = false;
-      });
-    }
-  }
+class OpenAiScreen extends StatelessWidget {
+  const OpenAiScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final openAiViewModel = context.read<OpenAiViewModel>();
     return Scaffold(
+      backgroundColor: const Color(0XFF141c24),
       appBar: AppBar(
-        title: const Text(
-          'Personal Valorant Coach',
+        title: Text(
+          'AI Valorant Coach',
+          style: TypographyStyle.antonL,
         ),
         centerTitle: true,
+        backgroundColor: const Color(0xFFbd3944),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           child: Form(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Center(
-                  child: Text(
-                    'Any question about valorant ?',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                Text(
+                  'Any question about valorant ?',
+                  style: TypographyStyle.antonM,
                 ),
                 const SizedBox(height: 20),
-                const Text(
-                  'Your question',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                // Text(
+                //   'Input Your question Here!!!',
+                //   style: TypographyStyle.antonSB,
+                // ),
+                // const SizedBox(height: 10),
                 TextFormField(
                   keyboardType: TextInputType.text,
-                  controller: _questionController,
-                  decoration: const InputDecoration(
+                  controller: openAiViewModel.questionController,
+                  decoration: InputDecoration(
                     hintText: 'Give me duelist recommendations for Breeze map',
+                    filled: true,
+                    label: const Text('Input Your question Here!!!'),
+                    labelStyle: TypographyStyle.antonMB,
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
                   ),
                 ),
                 const SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: isLoading
-                      ? const Center(child: CircularProgressIndicator())
-                      : ElevatedButton(
-                          onPressed: _getRecommendation,
-                          child: const Center(
-                            child: Text('Search'),
+                Consumer<OpenAiViewModel>(
+                  builder: (context, openAiViewModel, child) {
+                    if (openAiViewModel.isLoadingAnswer) {
+                      return const Center(child: CircularProgressIndicator());
+                    } else {
+                      return Center(
+                        child: SizedBox(
+                          width: 200,
+                          height: 35,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              openAiViewModel.getRecommendation().then(
+                                (_) {
+                                  final gptResponseData =
+                                      openAiViewModel.openAiAnswer;
+
+                                  openAiViewModel.resetFields(
+                                      openAiViewModel.questionController);
+                                  if (gptResponseData != null) {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) {
+                                          return ResultScreen(
+                                            gptResponseData: gptResponseData,
+
+                                            // Navigator.of(context).push(
+                                            //   MaterialPageRoute(
+                                            //     builder: (context) {
+                                            //       return ResultScreen(
+                                            //         gptResponseData:
+                                            //             openAiViewModel.openAiAnswer!,
+                                            //       );
+                                            //     },
+                                            //   ),
+                                            // );
+                                          );
+                                        },
+                                      ),
+                                    );
+                                  } else {
+                                    const snackBar = SnackBar(
+                                      content: Text('Failed to send a request'),
+                                    );
+
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(snackBar);
+                                  }
+                                },
+                              );
+                            },
+                            child: const Center(
+                              child: Text('Submit'),
+                            ),
                           ),
                         ),
-                )
+                      );
+                    }
+                  },
+                ),
               ],
             ),
           ),

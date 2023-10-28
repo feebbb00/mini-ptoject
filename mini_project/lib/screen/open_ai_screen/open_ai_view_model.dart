@@ -28,4 +28,11 @@ class OpenAiViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  void resetFields(
+    TextEditingController questionController,
+  ) {
+    questionController.clear();
+    notifyListeners();
+  }
 }
