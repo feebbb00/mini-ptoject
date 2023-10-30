@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project/screen/agent_widget/agent_view_model.dart';
 import 'package:mini_project/screen/detail_agent_screen/detail_agent_screen.dart';
+import 'package:mini_project/theme/color_theme.dart';
 import 'package:mini_project/theme/typography_style.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +35,7 @@ class AgentWidget extends StatelessWidget {
                       );
                     },
                     child: Card(
-                      color: const Color(0xFFfd4556),
+                      color: ColorTheme().colorRed,
                       child: Row(
                         children: [
                           Stack(

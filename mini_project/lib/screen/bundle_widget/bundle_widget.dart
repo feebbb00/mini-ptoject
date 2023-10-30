@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project/screen/bundle_widget/bundle_view_model.dart';
+import 'package:mini_project/theme/color_theme.dart';
 import 'package:mini_project/theme/typography_style.dart';
 import 'package:provider/provider.dart';
 
@@ -24,7 +25,7 @@ class BundleWidgetPage extends StatelessWidget {
             ),
             children: [
               Card(
-                color: const Color(0xFFfd4556),
+                color: ColorTheme().colorRed,
                 child: Padding(
                   padding: const EdgeInsets.all(6),
                   child: Column(
@@ -53,7 +54,7 @@ class BundleWidgetPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                             10,
                           ),
-                          color: const Color(0xFF672e37),
+                          color: ColorTheme().colorDarkMaroon,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

@@ -4,6 +4,7 @@ import 'package:mini_project/screen/bundle_widget/bundle_widget.dart';
 import 'package:mini_project/screen/map_avail_widget/map_widget.dart';
 import 'package:mini_project/screen/open_ai_screen/open_ai_screen.dart';
 import 'package:mini_project/screen/version_valo_widget/version_widget.dart';
+import 'package:mini_project/theme/color_theme.dart';
 import 'package:mini_project/theme/typography_style.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,9 +15,9 @@ class HomeScreen extends StatelessWidget {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: const Color(0XFF141c24),
+        backgroundColor: ColorTheme().colorBlack,
         appBar: AppBar(
-          backgroundColor: const Color(0xFFbd3944),
+          backgroundColor: ColorTheme().colorMaroon,
           centerTitle: true,
           title: Text(
             'Valorant News Hub',
@@ -37,20 +38,6 @@ class HomeScreen extends StatelessWidget {
                 style: TypographyStyle.antonS,
               ),
             ),
-            // IconButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (_) => const OpenAiScreen(),
-            //       ),
-            //     );
-            //   },
-            //   icon: const Icon(
-            //     Icons.search,
-            //     color: Colors.white,
-            //   ),
-            // ),
           ],
           bottom: TabBar(
             isScrollable: true,

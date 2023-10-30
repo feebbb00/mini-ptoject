@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project/model/open_ai_model.dart';
+import 'package:mini_project/theme/color_theme.dart';
 import 'package:mini_project/theme/typography_style.dart';
 
 class ResultScreen extends StatelessWidget {
@@ -10,13 +11,13 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0XFF141c24),
+      backgroundColor: ColorTheme().colorBlack,
       appBar: AppBar(
         title: Text(
           'Coach`s Answer',
           style: TypographyStyle.antonL,
         ),
-        backgroundColor: const Color(0xFFbd3944),
+        backgroundColor: ColorTheme().colorMaroon,
         leading: const SizedBox(),
         centerTitle: true,
       ),

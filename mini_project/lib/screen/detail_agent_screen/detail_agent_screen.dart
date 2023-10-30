@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project/screen/detail_agent_screen/detail_agent_view_model.dart';
+import 'package:mini_project/theme/color_theme.dart';
 import 'package:mini_project/theme/typography_style.dart';
 import 'package:provider/provider.dart';
 
@@ -10,18 +11,18 @@ class DetailAgentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      final detailAgentViewModel = context.read<DetailAgentViewModel>();
-      detailAgentViewModel.getDetailAgent(agentUUID);
+    final detailAgentViewModel = context.read<DetailAgentViewModel>();
+    detailAgentViewModel.getDetailAgent(agentUUID);
 
     return Scaffold(
-      backgroundColor: const Color(0XFF141c24),
+      backgroundColor: ColorTheme().colorBlack,
       appBar: AppBar(
         title: Text(
           'Detail Agent',
           style: TypographyStyle.antonL,
         ),
         centerTitle: true,
-        backgroundColor: const Color(0xFFbd3944),
+        backgroundColor: ColorTheme().colorMaroon,
       ),
       body: Consumer<DetailAgentViewModel>(
         builder: (context, detailAgentViewModel, child) {
@@ -69,7 +70,7 @@ class DetailAgentScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(12),
                           child: Card(
-                            color: const Color(0xFF53212b),
+                            color: ColorTheme().colorDarkMaroon,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
@@ -135,7 +136,7 @@ class DetailAgentScreen extends StatelessWidget {
                             return Padding(
                               padding: const EdgeInsets.all(12),
                               child: Card(
-                                color: const Color(0xFFfd4556),
+                                color: ColorTheme().colorRed,
                                 child: Padding(
                                   padding: const EdgeInsets.all(10),
                                   child: Column(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project/screen/open_ai_screen/answer_screen.dart';
 import 'package:mini_project/screen/open_ai_screen/open_ai_view_model.dart';
+import 'package:mini_project/theme/color_theme.dart';
 import 'package:mini_project/theme/typography_style.dart';
 import 'package:provider/provider.dart';
 
@@ -11,14 +12,14 @@ class OpenAiScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final openAiViewModel = context.read<OpenAiViewModel>();
     return Scaffold(
-      backgroundColor: const Color(0XFF141c24),
+      backgroundColor: ColorTheme().colorBlack,
       appBar: AppBar(
         title: Text(
           'AI Valorant Coach',
           style: TypographyStyle.antonL,
         ),
         centerTitle: true,
-        backgroundColor: const Color(0xFFbd3944),
+        backgroundColor: ColorTheme().colorMaroon,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
