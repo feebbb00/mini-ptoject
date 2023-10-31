@@ -35,7 +35,7 @@ class AgentWidget extends StatelessWidget {
                       );
                     },
                     child: Card(
-                      color: ColorTheme().colorRed,
+                      color: ColorTheme().colorMaroon,
                       child: Row(
                         children: [
                           Stack(

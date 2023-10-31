@@ -19,7 +19,7 @@ class OpenAiScreen extends StatelessWidget {
           style: TypographyStyle.antonL,
         ),
         centerTitle: true,
-        backgroundColor: ColorTheme().colorMaroon,
+        backgroundColor: ColorTheme().colorDarkMaroon,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),

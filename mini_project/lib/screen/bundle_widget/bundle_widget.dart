@@ -25,7 +25,7 @@ class BundleWidgetPage extends StatelessWidget {
             ),
             children: [
               Card(
-                color: ColorTheme().colorRed,
+                color: ColorTheme().colorMaroon,
                 child: Padding(
                   padding: const EdgeInsets.all(6),
                   child: Column(

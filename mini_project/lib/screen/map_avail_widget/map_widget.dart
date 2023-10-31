@@ -24,7 +24,7 @@ class MapWidget extends StatelessWidget {
                 itemBuilder: (context, index) {
                   var dataMap = mapViewModel.listMap[index];
                   return Card(
-                    color: ColorTheme().colorRed,
+                    color: ColorTheme().colorMaroon,
                     child: Padding(
                       padding: const EdgeInsets.all(16),
                       child: Column(

@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: ColorTheme().colorBlack,
         appBar: AppBar(
-          backgroundColor: ColorTheme().colorMaroon,
+          backgroundColor: ColorTheme().colorDarkMaroon,
           centerTitle: true,
           title: Text(
             'Valorant News Hub',

@@ -17,7 +17,7 @@ class ResultScreen extends StatelessWidget {
           'Coach`s Answer',
           style: TypographyStyle.antonL,
         ),
-        backgroundColor: ColorTheme().colorMaroon,
+        backgroundColor: ColorTheme().colorDarkMaroon,
         leading: const SizedBox(),
         centerTitle: true,
       ),

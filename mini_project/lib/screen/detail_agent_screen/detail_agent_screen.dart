@@ -22,7 +22,7 @@ class DetailAgentScreen extends StatelessWidget {
           style: TypographyStyle.antonL,
         ),
         centerTitle: true,
-        backgroundColor: ColorTheme().colorMaroon,
+        backgroundColor: ColorTheme().colorDarkMaroon,
       ),
       body: Consumer<DetailAgentViewModel>(
         builder: (context, detailAgentViewModel, child) {
@@ -70,7 +70,7 @@ class DetailAgentScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(12),
                           child: Card(
-                            color: ColorTheme().colorDarkMaroon,
+                            color: ColorTheme().colorMaroon,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
